@@ -13,7 +13,7 @@ and processes it step-by-step based on a set of rules. At each step, the automat
 and uses the transition function to determine the next state. 
 This continues until the end of the input is reached.
 
-
+----
 ## Objectives:
 
 
@@ -37,7 +37,7 @@ This continues until the end of the input is reached.
 
    * d. For the Finite Automaton, please add a method that checks if an input string can be obtained via the state transition from it;
 
-
+----
 ## Implementation description
 
  This function "generate_word" that takes a string parameter character and returns a string.
@@ -84,13 +84,14 @@ This continues until the end of the input is reached.
                 return False
         return str(state) in self.true_state
 ````
-
+----
 ## Conclusions / Screenshots / Results
 ### Screenshots/Results:
 ![img.png](img.png)
 ![img_1.png](img_1.png)
 ![img_2.png](img_2.png)
 
+----
 ### Conclusion:
    In this laboratory work on formal languages, finite automaton, and grammar, 
 I have implemented a Python program that provides a suite of functionalities for constructing, 
@@ -103,6 +104,7 @@ Throughout the laboratory work, I was able to learn about the fundamental concep
 I was also able to understand the relationships between these concepts and how they are used in computer science to model and describe various types of languages.
 The code that I have implemented during the laboratory work has been tested thoroughly and has proven to work as intended, which has provided me with a better understanding of how these formal systems work.
 
+----
 ## References
 
 https://github.com/DrVasile/FLFA-Labs/blob/master/1_RegularGrammars/task.md 
