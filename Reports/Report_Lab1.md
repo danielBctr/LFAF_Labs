@@ -92,7 +92,7 @@ This continues until the end of the input is reached.
 ![img_2.png](img_2.png)
 
 ### Conclusion:
-IN this laboratory work on formal languages, finite automaton, and grammar, 
+In this laboratory work on formal languages, finite automaton, and grammar, 
 I have implemented a Python program that provides a suite of functionalities for constructing, 
 manipulating, and working with finite automata and grammars.
 The program includes a class for FiniteAutomaton, 
