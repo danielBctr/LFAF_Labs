@@ -40,9 +40,9 @@ This continues until the end of the input is reached.
 
 ## Implementation description
 
-* This function "generate_word" that takes a string parameter character and returns a string.
-* The method first checks if the input character is a terminal symbol, which are the basic building blocks of the grammar. 
-* If the character is a terminal, the method simply returns the character.
+ This function "generate_word" that takes a string parameter character and returns a string.
+ The method first checks if the input character is a terminal symbol, which are the basic building blocks of the grammar. 
+ If the character is a terminal, the method simply returns the character.
 ````
    def word_generator(self, character: str = None) -> str:
         if character is None:
@@ -56,8 +56,8 @@ This continues until the end of the input is reached.
             word += self.word_generator(right_char)
         return word
 ````
-* This code represents the method "to_finite_automaton" that converts a context-free grammar into a finite automaton, 
-* represented by an instance of the FiniteAutomaton class. The method returns the created automaton.
+ This code represents the method "to_finite_automaton" that converts a context-free grammar into a finite automaton, 
+ represented by an instance of the FiniteAutomaton class. The method returns the created automaton.
 ````
         def to_finite_automaton(self):
         states = set(self.non_terminals) | {''}
@@ -72,8 +72,8 @@ This continues until the end of the input is reached.
         return automaton
 ````
 
-* This code represents the method "check_word" that takes a single argument word. 
-* The method uses a finite automaton to determine whether the input word is valid
+ This code represents the method "check_word" that takes a single argument word. 
+ The method uses a finite automaton to determine whether the input word is valid
 ````
     def check_word(self, word):
         state = self.first_state[0]
