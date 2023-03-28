@@ -124,6 +124,8 @@ comparison operators, keywords, identifiers, and more.
 In Conclusion it was an interesting lab, where I worked with the lexer and implemented it as well
 as tested how it works.
 ### References:
-https://github.com/DrVasile/FLFA-Labs/blob/master/3_LexerScanner/task.md
-https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl01.html
-https://en.wikipedia.org/wiki/Lexical_analysis
+[0] (https://github.com/DrVasile/FLFA-Labs/blob/master/3_LexerScanner/task.md)
+
+[1] (https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl01.html)
+
+[2] (https://en.wikipedia.org/wiki/Lexical_analysis)
