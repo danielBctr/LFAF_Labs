@@ -1,6 +1,7 @@
 from Grammar.Grammar import Grammar
 from src.Automaton.FiniteAutomaton import FiniteAutomaton
-
+from src.Lexer.lexer import Lexer
+from src.Lexer.token import Token
 
 # Implementation of my grammar
 grammar = Grammar(
@@ -81,5 +82,48 @@ print("Is the converted DFA Deterministic? : \n", dfa.is_deterministic())
 print("\n\t Task 3.d-> Drawing the Graph...")
 fa2.draw()
 
+# Lab 3
+
+print("-------------------------------Lab3-----------------------------------")
+# String 1:
+input_string = 'x = 3.14 * (y - 2);'
+lexer = Lexer(input_string, Token.token_exprs)
+tokens = lexer.lex()
+
+print("\n\tString 1 : \n" + input_string + "\n" + "\nTokens:")
+for token in tokens:
+    print(token)
+# String 2:
+input_string = 'y = "hello, world" != "goodbye" && true || null;'
+lexer = Lexer(input_string, Token.token_exprs)
+tokens = lexer.lex()
+
+print("\n\tString 2 : \n" + input_string + "\n" + "\nTokens:")
+for token in tokens:
+    print(token)
+# String 3:
+input_string = 'z = 10 * (3 + 4) % 5 || false;'
+lexer = Lexer(input_string, Token.token_exprs)
+tokens = lexer.lex()
+
+print("\n\tString 3 : \n" + input_string + "\n" + "\nTokens:")
+for token in tokens:
+    print(token)
+# String 4:
+input_string = 'c,b =(a != 0 || a == !b):;'
+lexer = Lexer(input_string, Token.token_exprs)
+tokens = lexer.lex()
+
+print("\n\tString 4 : \n" + input_string + "\n" + "\nTokens:")
+for token in tokens:
+    print(token)
+# String 5:
+input_string = 'for(a && b): {return false}; if: !a else:b; while(!true)'
+lexer = Lexer(input_string, Token.token_exprs)
+tokens = lexer.lex()
+
+print("\n\tString 5 : \n" + input_string + "\n" + "\nTokens:")
+for token in tokens:
+    print(token)
 
 

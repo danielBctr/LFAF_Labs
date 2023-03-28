@@ -179,13 +179,13 @@ and returns a new set of states that can be reached from the input states using 
 ## Conclusions / Screenshots / Results
 
 ### Screenshots/Results:
-![img_12.png](img_12.png)
-![img_6.png](img_6.png)
-![img_5.png](img_5.png)
-![img_8.png](img_8.png)
-![img_9.png](img_9.png)
-![img_10.png](img_10.png)
-![img_11.png](img_11.png)
+![img_12.png](images/img_12.png)
+![img_6.png](images/img_6.png)
+![img_5.png](images/img_5.png)
+![img_8.png](images/img_8.png)
+![img_9.png](images/img_9.png)
+![img_10.png](images/img_10.png)
+![img_11.png](images/img_11.png)
 
 ### Conclusion:
    I gained knowledge of finite automata and their function in formal language theory through this laboratory activity.
