@@ -99,7 +99,116 @@ token_exprs = {
 ```
 ## Conclusions / Screenshots / Results
 
-### Screenshots/Results:
+### Results:
+	String 1 : 
+x = 3.14 * (y - 2);
+
+Tokens:
+('IDENTIFIER', 'x', 1, 0)
+('ASSIGN', '=', 1, 2)
+('NUMBER', '3.14', 1, 4)
+('TIMES', '*', 1, 9)
+('LPAREN', '(', 1, 11)
+('IDENTIFIER', 'y', 1, 12)
+('MINUS', '-', 1, 14)
+('NUMBER', '2', 1, 16)
+('RPAREN', ')', 1, 17)
+('SEMICOLON', ';', 1, 18)
+
+	String 2 : 
+y = "hello, world" != "goodbye" && true || null;
+
+Tokens:
+('IDENTIFIER', 'y', 1, 0)
+('ASSIGN', '=', 1, 2)
+('QUOTATION', '"', 1, 4)
+('IDENTIFIER', 'hello', 1, 5)
+('COMMA', ',', 1, 10)
+('IDENTIFIER', 'world', 1, 12)
+('QUOTATION', '"', 1, 17)
+('NOT_EQUALS', '!=', 1, 19)
+('QUOTATION', '"', 1, 22)
+('IDENTIFIER', 'goodbye', 1, 23)
+('QUOTATION', '"', 1, 30)
+('AND', '&&', 1, 32)
+('TRUE', 'true', 1, 35)
+('OR', '||', 1, 40)
+('IDENTIFIER', 'null', 1, 43)
+('SEMICOLON', ';', 1, 47)
+
+	String 3 : 
+z = 10 * (3 + 4) % 5 || false;
+
+Tokens:
+('IDENTIFIER', 'z', 1, 0)
+('ASSIGN', '=', 1, 2)
+('NUMBER', '10', 1, 4)
+('TIMES', '*', 1, 7)
+('LPAREN', '(', 1, 9)
+('NUMBER', '3', 1, 10)
+('PLUS', '+', 1, 12)
+('NUMBER', '4', 1, 14)
+('RPAREN', ')', 1, 15)
+('MODULO', '%', 1, 17)
+('NUMBER', '5', 1, 19)
+('OR', '||', 1, 21)
+('FALSE', 'false', 1, 24)
+('SEMICOLON', ';', 1, 29)
+
+	String 4 : 
+c,b =(a != 0 || a == !b):;
+
+Tokens:
+('IDENTIFIER', 'c', 1, 0)
+('COMMA', ',', 1, 1)
+('IDENTIFIER', 'b', 1, 2)
+('ASSIGN', '=', 1, 4)
+('LPAREN', '(', 1, 5)
+('IDENTIFIER', 'a', 1, 6)
+('NOT_EQUALS', '!=', 1, 8)
+('NUMBER', '0', 1, 11)
+('OR', '||', 1, 13)
+('IDENTIFIER', 'a', 1, 16)
+('EQUALS', '==', 1, 18)
+('NOT', '!', 1, 21)
+('IDENTIFIER', 'b', 1, 22)
+('RPAREN', ')', 1, 23)
+('COLON', ':', 1, 24)
+('SEMICOLON', ';', 1, 25)
+
+	String 5 : 
+for(a && b): {return false}; if: !a else:b; while(!true)
+
+Tokens:
+('FOR', 'for', 1, 0)
+('LPAREN', '(', 1, 3)
+('IDENTIFIER', 'a', 1, 4)
+('AND', '&&', 1, 6)
+('IDENTIFIER', 'b', 1, 9)
+('RPAREN', ')', 1, 10)
+('COLON', ':', 1, 11)
+('LBRACE', '{', 1, 13)
+('RETURN', 'return', 1, 14)
+('FALSE', 'false', 1, 21)
+('RBRACE', '}', 1, 26)
+('SEMICOLON', ';', 1, 27)
+('IF', 'if', 1, 29)
+('COLON', ':', 1, 31)
+('NOT', '!', 1, 33)
+('IDENTIFIER', 'a', 1, 34)
+('ELSE', 'else', 1, 36)
+('COLON', ':', 1, 40)
+('IDENTIFIER', 'b', 1, 41)
+('SEMICOLON', ';', 1, 42)
+('WHILE', 'while', 1, 44)
+('LPAREN', '(', 1, 49)
+('NOT', '!', 1, 50)
+('TRUE', 'true', 1, 51)
+('RPAREN', ')', 1, 55)
+
+Process finished with exit code 0
+
+### Screenshots:
 ![img.png](images/img1_lab3.png)
 ![img.png](images/img2_lab3.png)
 ![img.png](images/img3_lab3.png)
@@ -122,7 +231,7 @@ type of token. This allowed me to easily add, remove or modify tokens as needed.
 The tokens I defined included numbers, operators, parentheses, braces, brackets, 
 comparison operators, keywords, identifiers, and more.
 In Conclusion it was an interesting lab, where I worked with the lexer and implemented it as well
-as tested how it works.
+as tested how it works. I understood how a lexer works and the basic of it.
 ### References:
 [0] (https://github.com/DrVasile/FLFA-Labs/blob/master/3_LexerScanner/task.md)
 
