@@ -124,11 +124,11 @@ not productive from the list of non-terminals.
 Vt(Terminal): ['a', 'b', 'd']
 Vn(Non-terminal): ['S', 'A', 'B', 'C', 'D']
 P(Productions): {'S': ['dB', 'A'], 'A': ['d', 'dS', 'aBdB'], 'B': ['a', 'aS', 'AC'], 'D': ['AB'], 'C': ['bC', 'ε']}
----
+
 	Removing epsilon productions:
 Vn(Non-terminal): ['S', 'A', 'B', 'C', 'D']
 P(Productions): {'S': ['dB', 'A'], 'A': ['d', 'dS', 'aBdB'], 'B': ['a', 'aS', 'A', 'AC'], 'D': ['AB'], 'C': ['bC']}
----
+
 	Removing unit productions:
 Vn(Non-terminal): ['S', 'A', 'B', 'C', 'D']
 P(Productions): {'S': ['dB', 'd', 'dS', 'aBdB'], 'A': ['d', 'dS', 'aBdB'], 'B': ['a', 'aS', 'd', 'dS', 'aBdB', 'AC'], 'D': ['AB'], 'C': ['bC']}
@@ -136,16 +136,16 @@ P(Productions): {'S': ['dB', 'd', 'dS', 'aBdB'], 'A': ['d', 'dS', 'aBdB'], 'B': 
 	Removing inaccessible productions:
 Vn(Non-terminal): ['S', 'A', 'B', 'C']
 P(Productions): {'S': ['dB', 'd', 'dS', 'aBdB'], 'A': ['d', 'dS', 'aBdB'], 'B': ['a', 'aS', 'd', 'dS', 'aBdB', 'AC'], 'C': ['bC']}
----
+
 	Removing non-productive productions:
 Vn(Non-terminal): ['S', 'A', 'B']
 P(Productions): {'S': ['dB', 'd', 'dS', 'aBdB'], 'A': ['d', 'dS', 'aBdB'], 'B': ['a', 'aS', 'd', 'dS', 'aBdB', 'A']}
----
+
 	CNF(Chomsky Normal Form):
 Vt(Terminal): ['a', 'b', 'd']
 Vn(Non-terminal): ['S', 'A', 'B']
 P(Productions): {'S': ['dB', 'd', 'dS', 'aBdB'], 'A': ['d', 'dS', 'aBdB'], 'B': ['a', 'aS', 'd', 'dS', 'aBdB', 'A']}
----
+
 
 ### Screenshots:
 ![img.png](images/img_lab4_1.png)
