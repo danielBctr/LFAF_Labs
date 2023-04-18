@@ -8,14 +8,14 @@
 ----
 
 ## Theory:
-Chomsky Normal Form (CNF) is a specific form of context-free grammars 
+Chomsky Normal Form (CNF) is a specific form of context-free grammars  
 that has important properties and applications in the field of formal language 
-theory and natural language processing. CNF is a restricted form of CFGs that 
-imposes specific constraints on the structure of production rules, resulting in grammars 
-with desirable properties such as unambiguous parsing and efficient parsing algorithms. 
-In CNF, production rules are limited to two forms: A -> BC, where A, B, and C are non-terminal 
+theory and natural language processing. CNF is a restricted form of CFGs that  imposes 
+specific constraints on the structure of production rules, resulting in grammars  with 
+desirable properties such as unambiguous parsing and efficient parsing algorithms.  
+In CNF, production rules are limited to two forms: A -> BC, where A, B, and C are non-terminal  
 symbols, and A -> a, where A is a non-terminal symbol and a is a terminal symbol.
-----
+
 ## Objectives:
 1. Learn about Chomsky Normal Form (CNF).
 2. Get familiar with the approaches of normalizing a grammar.
