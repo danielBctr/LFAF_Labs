@@ -45,6 +45,63 @@ class Grammar:
                         return 'Type 0'
         return 'Type 1'
 
+    def to_cnf(self):
+        transformations = [
+            ("epsilon", self.remove_epsilon),
+            ("unit", self.remove_unit),
+            ("inaccessible", self.remove_inaccessible_symbols),
+            ("non-productive", self.remove_non_productive_symbols),
+        ]
+        for name, transformation in transformations:
+            transformation()
+            print(f"\n\tRemoving {name} productions:\n"
+                  f"Vn(Non-terminal): {self.non_terminals}\n"
+                  f"P(Productions): {self.productions}")
+        return self.productions, self.terminals, self.non_terminals
+
+    def remove_epsilon(self):
+        epsilon = set(variable for variable, productions in self.productions.items() if "ε" in productions)
+        for left, right in self.productions.items():
+            for i in right:
+                for j in epsilon:
+                    if j in i and left != j:
+                        self.productions[left] = [x.replace(j, "") for x in self.productions[left]]
+                        self.productions[left].append(i)
+                    elif i == "ε":
+                        self.productions[left].remove(i)
+        return self.productions
+
+    def remove_unit(self):
+        self.productions = {
+            left: [r for rhs in right for r in (self.productions[rhs] if rhs in self.productions else [rhs])]
+            for left, right in self.productions.items()
+        }
+        if any(len(right) == 1 and right[0] in self.non_terminals for right in self.productions.values()):
+            self.remove_unit()
+        return self.productions
+
+    def remove_inaccessible_symbols(self):
+        accessible = set(w for right in self.productions.values() for r in right for w in r)
+
+        self.productions = {
+            left: right for left, right in self.productions.items() if left in accessible
+        }
+
+        self.non_terminals = [a for a in self.non_terminals if a in accessible]
+        return self.productions
+
+    def remove_non_productive_symbols(self):
+        productive = set(left for left, right in self.productions.items() if any(r in self.terminals for r in right))
+        self.productions = {
+            left: [
+                "".join(w for w in r if w in self.terminals or w in productive)
+                for r in right if len(r) == 1 or any(w in productive for w in r)
+            ]
+            for left, right in self.productions.items() if left in productive
+        }
+        self.non_terminals = [a for a in self.non_terminals if a in productive]
+        return self.productions
+
     """
         def to_finite_automaton(self):
             states = set(self.non_terminals) | {''}
@@ -58,12 +115,3 @@ class Grammar:
             automaton.put_alphabet(self.terminals)
             return automaton
     """
-
-
-
-
-
-
-
-
-

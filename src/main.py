@@ -126,4 +126,25 @@ print("\n\tString 5 : \n" + input_string + "\n" + "\nTokens:")
 for token in tokens:
     print(token)
 
+# Lab 4
+
+print("-------------------------------Lab4-----------------------------------")
+
+starting_symbol = 'S'
+non_terminals = ['S', 'A', 'B', 'C', 'D']
+terminals = ['a', 'b', 'd']
+productions = {'S': ['dB', 'A'],
+                'A': ['d', 'dS', 'aBdB'],
+                'B': ['a', 'aS', 'AC'],
+                'D': ['AB'],
+                'C': ['bC', 'ε']
+                }
+
+grammar = Grammar(starting_symbol , terminals, non_terminals, productions)
+
+print(f"\tInitial Grammar:\nVt(Terminal): {grammar.terminals}\nVn(Non-terminal): {grammar.non_terminals}\nP(Productions): {grammar.productions}")
+grammar.to_cnf()
+print(f"\n\tCNF(Chomsky Normal Form):\nVt(Terminal): {grammar.terminals}\nVn(Non-terminal): {grammar.non_terminals}\nP(Productions): {grammar.productions}")
+
+
 
